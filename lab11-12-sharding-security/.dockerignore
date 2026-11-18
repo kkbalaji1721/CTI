@@ -1,0 +1,6 @@
+.git
+**/__pycache__
+**/*.pyc
+Lab-12-Security/certificates/*.key
+Lab-12-Security/certificates/*.pem
+Lab-12-Security/certificates/*.crt

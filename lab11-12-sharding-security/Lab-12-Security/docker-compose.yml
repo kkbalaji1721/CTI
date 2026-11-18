@@ -1,0 +1,16 @@
+services:
+  mongodb:
+    image: YOUR_DOCKERHUB_USERNAME/mongodb-lab11-12:1.0
+    container_name: lab12-auth-mongodb
+    command: ["mongod", "--auth", "--bind_ip_all", "--port", "27017"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ChangeMe_Root_123!
+    ports:
+      - "27018:27017"
+    volumes:
+      - authdata:/data/db
+      - ./scripts:/scripts:ro
+
+volumes:
+  authdata:

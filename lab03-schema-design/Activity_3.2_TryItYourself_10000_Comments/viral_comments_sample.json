@@ -1,0 +1,302 @@
+[
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e24e"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 1,
+    "author": "user_655",
+    "text": "Could you cover the indexing side next?",
+    "likes": 1,
+    "created": {
+      "$date": "2026-03-01T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e24f"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 2,
+    "author": "user_760",
+    "text": "The diagram is the best part of this post.",
+    "likes": 15,
+    "created": {
+      "$date": "2026-03-01T00:01:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e250"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 3,
+    "author": "user_229",
+    "text": "I hit the same problem in production last month.",
+    "likes": 6,
+    "created": {
+      "$date": "2026-03-01T00:02:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e251"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 4,
+    "author": "user_693",
+    "text": "Any benchmark numbers to back this up?",
+    "likes": 5,
+    "created": {
+      "$date": "2026-03-01T00:03:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e252"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 5,
+    "author": "user_605",
+    "text": "Bookmarking this before my exam.",
+    "likes": 2,
+    "created": {
+      "$date": "2026-03-01T00:04:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e253"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 6,
+    "author": "user_031",
+    "text": "Could you cover the indexing side next?",
+    "likes": 13,
+    "created": {
+      "$date": "2026-03-01T00:05:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e254"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 7,
+    "author": "user_239",
+    "text": "Any benchmark numbers to back this up?",
+    "likes": 38,
+    "created": {
+      "$date": "2026-03-01T00:06:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e255"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 8,
+    "author": "user_028",
+    "text": "Any benchmark numbers to back this up?",
+    "likes": 12,
+    "created": {
+      "$date": "2026-03-01T00:07:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e256"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 9,
+    "author": "user_734",
+    "text": "Any benchmark numbers to back this up?",
+    "likes": 26,
+    "created": {
+      "$date": "2026-03-01T00:08:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e257"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 10,
+    "author": "user_226",
+    "text": "Small typo in the third code block.",
+    "likes": 37,
+    "created": {
+      "$date": "2026-03-01T00:09:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e258"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 11,
+    "author": "user_285",
+    "text": "This finally made the concept click for me.",
+    "likes": 10,
+    "created": {
+      "$date": "2026-03-01T00:10:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e259"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 12,
+    "author": "user_715",
+    "text": "Bookmarking this before my exam.",
+    "likes": 21,
+    "created": {
+      "$date": "2026-03-01T00:11:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e25a"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 13,
+    "author": "user_285",
+    "text": "I hit the same problem in production last month.",
+    "likes": 13,
+    "created": {
+      "$date": "2026-03-01T00:12:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e25b"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 14,
+    "author": "user_782",
+    "text": "Does this hold for sharded clusters too?",
+    "likes": 6,
+    "created": {
+      "$date": "2026-03-01T00:13:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e25c"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 15,
+    "author": "user_095",
+    "text": "Bookmarking this before my exam.",
+    "likes": 6,
+    "created": {
+      "$date": "2026-03-01T00:14:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e25d"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 16,
+    "author": "user_368",
+    "text": "Does this hold for sharded clusters too?",
+    "likes": 38,
+    "created": {
+      "$date": "2026-03-01T00:15:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e25e"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 17,
+    "author": "user_271",
+    "text": "This finally made the concept click for me.",
+    "likes": 29,
+    "created": {
+      "$date": "2026-03-01T00:16:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e25f"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 18,
+    "author": "user_550",
+    "text": "Could you cover the indexing side next?",
+    "likes": 24,
+    "created": {
+      "$date": "2026-03-01T00:17:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e260"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 19,
+    "author": "user_081",
+    "text": "Any benchmark numbers to back this up?",
+    "likes": 18,
+    "created": {
+      "$date": "2026-03-01T00:18:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e261"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e24a"
+    },
+    "seq": 20,
+    "author": "user_850",
+    "text": "Worked on MongoDB 7 exactly as described.",
+    "likes": 23,
+    "created": {
+      "$date": "2026-03-01T00:19:00Z"
+    }
+  }
+]

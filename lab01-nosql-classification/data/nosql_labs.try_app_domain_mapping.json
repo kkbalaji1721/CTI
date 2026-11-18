@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "6a904383beafc62261754a99"
+  },
+  "app": "E-Commerce",
+  "domain": "customer_profiles",
+  "description": "Customer details, addresses, preferences, and account information",
+  "read_write_pattern": "Read-heavy, occasional updates",
+  "recommended_family": "Document",
+  "recommended_db": "MongoDB",
+  "rationale": "Flexible JSON documents can store customer information with nested addresses and preferences"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754a9a"
+  },
+  "app": "E-Commerce",
+  "domain": "product_catalog",
+  "description": "Products, categories, specifications, prices, and product attributes",
+  "read_write_pattern": "Read-heavy with frequent product updates",
+  "recommended_family": "Document",
+  "recommended_db": "MongoDB",
+  "rationale": "Products can have different attributes and fit naturally into flexible documents"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754a9b"
+  },
+  "app": "E-Commerce",
+  "domain": "shopping_cart",
+  "description": "Active shopping carts containing products, quantities, and prices",
+  "read_write_pattern": "Very frequent reads and writes",
+  "recommended_family": "Key-Value",
+  "recommended_db": "Redis",
+  "rationale": "Fast key-based access makes Redis suitable for frequently changing shopping carts"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754a9c"
+  },
+  "app": "E-Commerce",
+  "domain": "product_reviews",
+  "description": "Customer reviews, ratings, comments, and review timestamps",
+  "read_write_pattern": "Write-heavy with frequent reads",
+  "recommended_family": "Document",
+  "recommended_db": "MongoDB",
+  "rationale": "Reviews have flexible fields and can be stored efficiently as JSON-like documents"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754a9d"
+  },
+  "app": "Healthcare Monitoring",
+  "domain": "patient_relationships",
+  "description": "Relationships between patients, doctors, hospitals, and medical specialists",
+  "read_write_pattern": "Relationship and traversal queries",
+  "recommended_family": "Graph",
+  "recommended_db": "Neo4j",
+  "rationale": "Graph databases efficiently represent and traverse relationships between healthcare entities"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754a9e"
+  },
+  "app": "Healthcare Monitoring",
+  "domain": "patient_vitals",
+  "description": "Heart rate, blood pressure, temperature, and other sensor readings over time",
+  "read_write_pattern": "High-volume time-series writes and range queries",
+  "recommended_family": "Time-Series",
+  "recommended_db": "InfluxDB",
+  "rationale": "InfluxDB is designed for storing and querying large amounts of time-series sensor data"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754a9f"
+  },
+  "app": "Healthcare Monitoring",
+  "domain": "medical_records",
+  "description": "Patient medical history, diagnoses, prescriptions, and treatment information",
+  "read_write_pattern": "Read-heavy with structured and flexible records",
+  "recommended_family": "Document",
+  "recommended_db": "MongoDB",
+  "rationale": "Document storage supports flexible medical records with nested information"
+},
+{
+  "_id": {
+    "$oid": "6a904383beafc62261754aa0"
+  },
+  "app": "Healthcare Monitoring",
+  "domain": "live_device_status",
+  "description": "Current status of connected medical monitoring devices",
+  "read_write_pattern": "Frequent updates and fast lookups",
+  "recommended_family": "Key-Value",
+  "recommended_db": "Redis",
+  "rationale": "Redis provides fast key-based reads and writes for real-time device status"
+}]

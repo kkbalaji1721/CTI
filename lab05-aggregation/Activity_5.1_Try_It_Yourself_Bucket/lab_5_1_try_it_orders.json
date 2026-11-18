@@ -1,0 +1,30 @@
+{
+  "orders": [
+    {"order_id": "ORD-1001", "customer": "Arjun", "product": "USB-C Cable", "quantity": 3, "unit_price": 9.99, "order_date": {"$date": "2026-01-05T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1002", "customer": "Sneha", "product": "Mechanical Keyboard", "quantity": 1, "unit_price": 89.0, "order_date": {"$date": "2026-01-12T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1003", "customer": "Kavya", "product": "27-inch Monitor", "quantity": 1, "unit_price": 229.0, "order_date": {"$date": "2026-01-18T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1004", "customer": "Rahul", "product": "Wireless Mouse", "quantity": 2, "unit_price": 25.0, "order_date": {"$date": "2026-01-25T00:00:00Z"}, "status": "shipped"},
+    {"order_id": "ORD-1005", "customer": "Divya", "product": "Desk Lamp", "quantity": 2, "unit_price": 29.99, "order_date": {"$date": "2026-02-02T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1006", "customer": "Arjun", "product": "Noise-Cancelling Headphones", "quantity": 2, "unit_price": 149.0, "order_date": {"$date": "2026-02-09T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1007", "customer": "Vikram", "product": "Webcam HD", "quantity": 1, "unit_price": 59.99, "order_date": {"$date": "2026-02-14T00:00:00Z"}, "status": "cancelled"},
+    {"order_id": "ORD-1008", "customer": "Sneha", "product": "Laptop Stand", "quantity": 5, "unit_price": 40.0, "order_date": {"$date": "2026-02-20T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1009", "customer": "Kavya", "product": "USB-C Cable", "quantity": 1, "unit_price": 9.99, "order_date": {"$date": "2026-02-27T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1010", "customer": "Rahul", "product": "27-inch Monitor", "quantity": 2, "unit_price": 229.0, "order_date": {"$date": "2026-03-03T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1011", "customer": "Arjun", "product": "Mechanical Keyboard", "quantity": 1, "unit_price": 89.0, "order_date": {"$date": "2026-03-10T00:00:00Z"}, "status": "pending"},
+    {"order_id": "ORD-1012", "customer": "Divya", "product": "Noise-Cancelling Headphones", "quantity": 1, "unit_price": 149.0, "order_date": {"$date": "2026-03-15T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1013", "customer": "Vikram", "product": "Wireless Mouse", "quantity": 3, "unit_price": 25.0, "order_date": {"$date": "2026-03-22T00:00:00Z"}, "status": "shipped"},
+    {"order_id": "ORD-1014", "customer": "Sneha", "product": "Webcam HD", "quantity": 2, "unit_price": 59.99, "order_date": {"$date": "2026-03-28T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1015", "customer": "Kavya", "product": "Desk Lamp", "quantity": 1, "unit_price": 29.99, "order_date": {"$date": "2026-04-04T00:00:00Z"}, "status": "cancelled"},
+    {"order_id": "ORD-1016", "customer": "Rahul", "product": "Mechanical Keyboard", "quantity": 2, "unit_price": 89.0, "order_date": {"$date": "2026-04-11T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1017", "customer": "Arjun", "product": "Laptop Stand", "quantity": 1, "unit_price": 40.0, "order_date": {"$date": "2026-04-19T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1018", "customer": "Vikram", "product": "27-inch Monitor", "quantity": 1, "unit_price": 229.0, "order_date": {"$date": "2026-04-26T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1019", "customer": "Divya", "product": "USB-C Cable", "quantity": 4, "unit_price": 9.99, "order_date": {"$date": "2026-05-03T00:00:00Z"}, "status": "pending"},
+    {"order_id": "ORD-1020", "customer": "Sneha", "product": "Noise-Cancelling Headphones", "quantity": 1, "unit_price": 149.0, "order_date": {"$date": "2026-05-09T00:00:00Z"}, "status": "shipped"},
+    {"order_id": "ORD-1021", "customer": "Kavya", "product": "Webcam HD", "quantity": 3, "unit_price": 59.99, "order_date": {"$date": "2026-05-16T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1022", "customer": "Rahul", "product": "Desk Lamp", "quantity": 4, "unit_price": 29.99, "order_date": {"$date": "2026-05-23T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1023", "customer": "Arjun", "product": "Wireless Mouse", "quantity": 1, "unit_price": 25.0, "order_date": {"$date": "2026-06-02T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1024", "customer": "Vikram", "product": "Noise-Cancelling Headphones", "quantity": 2, "unit_price": 149.0, "order_date": {"$date": "2026-06-09T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-1025", "customer": "Divya", "product": "27-inch Monitor", "quantity": 1, "unit_price": 229.0, "order_date": {"$date": "2026-06-14T00:00:00Z"}, "status": "shipped"},
+    {"order_id": "ORD-1026", "customer": "Sneha", "product": "Mechanical Keyboard", "quantity": 3, "unit_price": 89.0, "order_date": {"$date": "2026-06-21T00:00:00Z"}, "status": "completed"}
+  ]
+}

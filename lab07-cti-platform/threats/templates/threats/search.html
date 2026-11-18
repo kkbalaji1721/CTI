@@ -1,0 +1,12 @@
+{% extends "threats/base.html" %}{% block content %}
+<h1>{{ res|length }} result{{ res|length|pluralize }}{% if q %} for “{{ q }}”{% endif %}</h1>
+{% if ind %}<p class="vt">Looks like a <b>{{ ind }}</b>. <a class="btn" target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search/{{ q|urlencode }}">Check on VirusTotal</a></p>{% endif %}
+{% if vuln %}<p class="vt">This CVE is tracked: <a href="{% url 'vuln_detail' vuln.cve %}">open vulnerability page</a></p>{% endif %}
+<form class="filters" method="get"><input type="hidden" name="q" value="{{ q }}">
+<select name="category" onchange="this.form.submit()"><option value="">All categories</option>
+{% for c in cats %}<option {% if c == cat %}selected{% endif %}>{{ c }}</option>{% endfor %}</select>
+<a class="btn" href="{% url 'download_search' %}?q={{ q|urlencode }}&category={{ cat|urlencode }}" download>Download results (.md)</a></form>
+<ul class="results">{% for t in res %}<li><a href="{% url 'detail' t.id %}">{{ t.title }}</a>
+<small>{{ t.classification.category }} · {{ t.classification.verdict }} · score {{ t.score }}</small><p>{{ t.summary|truncatechars:180 }}</p></li>
+{% empty %}<li>No matches. Try a broader term or clear the category filter.</li>{% endfor %}</ul>
+{% endblock %}

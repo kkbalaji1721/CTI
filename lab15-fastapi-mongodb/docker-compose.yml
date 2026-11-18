@@ -1,0 +1,14 @@
+# Optional: API + separate MongoDB container.  Run:  docker compose up --build
+services:
+  mongo:
+    image: mongo:7
+    volumes: ["mongo_data:/data/db"]
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+      JWT_SECRET: change-me-to-a-long-random-string-0123456789
+    depends_on: [mongo]
+volumes:
+  mongo_data:

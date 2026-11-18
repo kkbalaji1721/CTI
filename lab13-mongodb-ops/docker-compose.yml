@@ -1,0 +1,100 @@
+# Lab 13.1 - Production-style 3-node MongoDB replica set (keyFile auth)
+# + Prometheus exporter sidecar (Activity 13.1) + Prometheus server.
+#
+#   docker compose up -d          -> keyfile generated, 3 nodes start, rs0 initiated, users created
+#   docker compose run --rm tools python tools/verify_rs.py
+#   docker compose run --rm tools python tools/failover_test.py --stepdown-after 8
+x-mongo-node: &mongo-node
+  image: ${DOCKERHUB_USER:-yourdockerhubusername}/lab13-mongo:${IMAGE_TAG:-1.0}
+  build: { context: ., dockerfile: Dockerfile.mongo }
+  restart: unless-stopped
+  command: ["--replSet", "rs0", "--bind_ip_all", "--auth", "--keyFile", "/etc/mongodb/keyfile"]
+  healthcheck:
+    # ping works before any user exists, so the check is valid from first boot
+    test: ["CMD-SHELL", "mongosh --quiet --eval \"db.adminCommand('ping').ok\" | grep -q 1"]
+    interval: 10s
+    timeout: 5s
+    retries: 10
+    start_period: 15s
+  depends_on:
+    keyfile-gen: { condition: service_completed_successfully }
+
+services:
+  # One-shot: creates the shared keyfile (equivalent of `openssl rand -base64 756 > keyfile`)
+  keyfile-gen:
+    image: ${DOCKERHUB_USER:-yourdockerhubusername}/lab13-mongo:${IMAGE_TAG:-1.0}
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - '[ -s /keyfile-src/keyfile ] || head -c 756 /dev/urandom | base64 > /keyfile-src/keyfile; chmod 444 /keyfile-src/keyfile; echo keyfile ready'
+    volumes: [ "keyfile:/keyfile-src" ]
+    restart: "no"
+
+  mongo-rs0-1:
+    <<: *mongo-node
+    container_name: prod-mongo-1
+    ports: [ "27017:27017", "9216:9216" ]   # 9216 = exporter sidecar (shares this container's network)
+    volumes: [ "prod_data1:/data/db", "keyfile:/keyfile-src:ro" ]
+
+  mongo-rs0-2:
+    <<: *mongo-node
+    container_name: prod-mongo-2
+    ports: [ "27018:27017" ]
+    volumes: [ "prod_data2:/data/db", "keyfile:/keyfile-src:ro" ]
+
+  mongo-rs0-3:
+    <<: *mongo-node
+    container_name: prod-mongo-3
+    ports: [ "27019:27017" ]
+    volumes: [ "prod_data3:/data/db", "keyfile:/keyfile-src:ro" ]
+
+  # One-shot: rs.initiate() + create users. Same network namespace as node 1 => localhost exception.
+  rs-init:
+    image: ${DOCKERHUB_USER:-yourdockerhubusername}/lab13-mongo:${IMAGE_TAG:-1.0}
+    network_mode: "service:mongo-rs0-1"
+    entrypoint: ["bash", "/scripts/rs-init.sh"]
+    environment:
+      MONGO_ADMIN_USER: ${MONGO_ADMIN_USER:-admin}
+      MONGO_ADMIN_PASSWORD: ${MONGO_ADMIN_PASSWORD:-AdminPass123}
+      EXPORTER_USER: ${EXPORTER_USER:-exporter}
+      EXPORTER_PASSWORD: ${EXPORTER_PASSWORD:-ExporterPass123}
+    depends_on:
+      mongo-rs0-1: { condition: service_healthy }
+      mongo-rs0-2: { condition: service_healthy }
+      mongo-rs0-3: { condition: service_healthy }
+    restart: "no"
+
+  # Activity 13.1: Prometheus exporter SIDECAR for node 1 (shares its network namespace)
+  mongodb-exporter:
+    image: percona/mongodb_exporter:0.40
+    network_mode: "service:mongo-rs0-1"
+    command:
+      - "--mongodb.uri=mongodb://${EXPORTER_USER:-exporter}:${EXPORTER_PASSWORD:-ExporterPass123}@localhost:27017/admin"
+      - "--collect-all"
+      - "--compatible-mode"
+    restart: unless-stopped
+    depends_on:
+      rs-init: { condition: service_completed_successfully }
+
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    container_name: prod-prometheus
+    ports: [ "9090:9090" ]
+    volumes: [ "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro" ]
+    depends_on: [ mongodb-exporter ]
+
+  # Demo container: PyMongo scripts run INSIDE the compose network (so replica-set hostnames resolve)
+  tools:
+    image: ${DOCKERHUB_USER:-yourdockerhubusername}/lab13-tools:${IMAGE_TAG:-1.0}
+    build: { context: ., dockerfile: Dockerfile.tools }
+    profiles: [ "tools" ]
+    environment:
+      MONGO_ADMIN_USER: ${MONGO_ADMIN_USER:-admin}
+      MONGO_ADMIN_PASSWORD: ${MONGO_ADMIN_PASSWORD:-AdminPass123}
+    depends_on:
+      rs-init: { condition: service_completed_successfully }
+
+volumes:
+  prod_data1:
+  prod_data2:
+  prod_data3:
+  keyfile:

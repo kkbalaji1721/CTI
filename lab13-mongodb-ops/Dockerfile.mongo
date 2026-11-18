@@ -1,0 +1,12 @@
+# Lab 13.1 - MongoDB node image (mongo:7 + keyfile-permission wrapper)
+# The keyfile is NOT baked into this image (public images must not contain secrets).
+# It is generated at runtime into a shared volume and copied here with the
+# ownership/permissions mongod demands (owner mongodb, mode 400).
+FROM mongo:7
+COPY scripts/mongo-entrypoint.sh /usr/local/bin/mongo-entrypoint.sh
+COPY scripts/rs-init.sh /scripts/rs-init.sh
+RUN chmod +x /usr/local/bin/mongo-entrypoint.sh /scripts/rs-init.sh
+LABEL org.opencontainers.image.title="lab13-mongo" \
+      org.opencontainers.image.description="MongoDB 7 replica-set node for Lab 13.1 (keyFile auth)"
+ENTRYPOINT ["/usr/local/bin/mongo-entrypoint.sh"]
+CMD ["mongod"]

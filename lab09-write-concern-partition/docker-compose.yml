@@ -1,0 +1,51 @@
+# Lab 9 - 3-node MongoDB replica set (all members data-bearing) + lab runner
+# The "lab" service is the image you publish on Docker Hub.
+name: lab09
+
+services:
+  mongo1:
+    image: mongo:7
+    container_name: mongo1
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    volumes:
+      - mongo1_data:/data/db
+    networks: [labnet]
+
+  mongo2:
+    image: mongo:7
+    container_name: mongo2
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    volumes:
+      - mongo2_data:/data/db
+    networks: [labnet]
+
+  mongo3:
+    image: mongo:7
+    container_name: mongo3
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    volumes:
+      - mongo3_data:/data/db
+    networks: [labnet]
+
+  lab:
+    image: ${LAB_IMAGE:-nosql-lab09:latest}
+    profiles: ["tools"]
+    depends_on: [mongo1, mongo2, mongo3]
+    environment:
+      REPLICA_SET_URI: "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=rs0"
+      LAB_NETWORK: lab09_net
+      RESULTS_DIR: /results
+    volumes:
+      # lets Lab 9.2 run `docker network disconnect/connect` to simulate a partition
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./results:/results
+    networks: [labnet]
+
+networks:
+  labnet:
+    name: lab09_net
+
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:

@@ -1,0 +1,52 @@
+[
+    {
+        "_id": "6a957f3752780a8c459c7e04",
+        "title": "Python Crash Course",
+        "author": "Eric Matthes",
+        "year": 2023,
+        "genre": "Programming",
+        "price": 50.589000000000006,
+        "tags": [
+            "Python",
+            "programming",
+            "beginner"
+        ]
+    },
+    {
+        "_id": "6a957f3752780a8c459c7e05",
+        "title": "Data Science from Scratch",
+        "author": "Joel Grus",
+        "year": 2022,
+        "genre": "Data Science",
+        "price": 43.989000000000004,
+        "tags": [
+            "Python",
+            "data-science",
+            "AI"
+        ]
+    },
+    {
+        "_id": "6a957f3752780a8c459c7e06",
+        "title": "Learning SQL",
+        "author": "Alan Beaulieu",
+        "year": 2009,
+        "genre": "SQL Database",
+        "price": 51.42500000000001,
+        "tags": [
+            "SQL",
+            "database"
+        ]
+    },
+    {
+        "_id": "6a957f3752780a8c459c7e07",
+        "title": "Artificial Intelligence Basics",
+        "author": "Tom Taulli",
+        "year": 2024,
+        "genre": "Artificial Intelligence",
+        "price": 60.50000000000001,
+        "tags": [
+            "AI",
+            "machine-learning"
+        ]
+    }
+]

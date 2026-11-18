@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+.pytest_cache
+results
+.git
+*.pdf
+make_submission_pdf.py

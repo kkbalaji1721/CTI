@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+results/benchmark_dataset.jsonl
+results/benchmark_vectors.npy
+results/benchmark_results.json
+results/conversations.jsonl
+submission/

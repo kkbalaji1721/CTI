@@ -1,0 +1,112 @@
+[
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e240"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23b"
+    },
+    "author": "reader_a",
+    "text": "Great overview, very clear.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e241"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23b"
+    },
+    "author": "reader_b",
+    "text": "Bookmarked this for my exam.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e242"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23b"
+    },
+    "author": "reader_c",
+    "text": "Could you add a SQL comparison table?",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e243"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23c"
+    },
+    "author": "reader_d",
+    "text": "$facet deserves a follow-up post.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e244"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23c"
+    },
+    "author": "reader_a",
+    "text": "The $lookup example finally made sense.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e245"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23d"
+    },
+    "author": "reader_e",
+    "text": "How does HNSW compare with IVF here?",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e246"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23d"
+    },
+    "author": "reader_b",
+    "text": "Nice, practical writeup.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e247"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23e"
+    },
+    "author": "reader_f",
+    "text": "AP systems are underrated.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e248"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23e"
+    },
+    "author": "reader_c",
+    "text": "Useful for interviews too.",
+    "likes": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a9e9ebb522824a1d566e249"
+    },
+    "post_id": {
+      "$oid": "6a9e9ebb522824a1d566e23f"
+    },
+    "author": "reader_g",
+    "text": "A real fraud case study would help.",
+    "likes": 0
+  }
+]

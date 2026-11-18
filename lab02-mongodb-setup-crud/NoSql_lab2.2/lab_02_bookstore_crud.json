@@ -1,0 +1,53 @@
+[
+    {
+        "_id": "6a957f13602ae7b07c5523b5",
+        "title": "The Pragmatic Programmer",
+        "author": "Andrew Hunt",
+        "year": 1999,
+        "genre": "Programming",
+        "price": 54.989000000000004,
+        "tags": [
+            "programming",
+            "software"
+        ]
+    },
+    {
+        "_id": "6a957f13602ae7b07c5523b6",
+        "title": "Designing Data-Intensive Applications",
+        "author": "Martin Kleppmann",
+        "year": 2017,
+        "genre": "Database",
+        "price": 50.589000000000006,
+        "tags": [
+            "database",
+            "distributed-systems"
+        ]
+    },
+    {
+        "_id": "6a957f13602ae7b07c5523b7",
+        "title": "Deep Learning",
+        "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+        "year": 2016,
+        "genre": "Machine Learning",
+        "price": 79.2,
+        "tags": [
+            "AI",
+            "neural-networks",
+            "theory"
+        ]
+    },
+    {
+        "_id": "6a957f13602ae7b07c5523b9",
+        "title": "Hands-On Machine Learning",
+        "author": "Aurelien Geron",
+        "year": 2022,
+        "genre": "Machine Learning",
+        "price": 65.989,
+        "tags": [
+            "AI",
+            "scikit-learn",
+            "tensorflow",
+            "practical"
+        ]
+    }
+]

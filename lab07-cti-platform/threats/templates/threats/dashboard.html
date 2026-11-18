@@ -1,0 +1,13 @@
+{% extends "threats/base.html" %}{% block content %}
+<section class="stats"><div><b>{{ total }}</b> threats tracked</div><div><b>{{ confirmed }}</b> confirmed by reliable sources</div>
+<a class="btn" href="{% url 'download_top' %}" download>Download top threats (.md)</a></section>
+<div class="stats"><div><b>{{ vtotal }}</b> unique vulnerabilities (CVEs)</div><a class="btn" href="{% url 'vulnerabilities' %}">View vulnerabilities</a></div>
+<h1>Top threats</h1>
+<ol class="top">{% for t in top %}<li><span class="score s{{ t.score|stringformat:'d'|slice:':1' }}">{{ t.score }}</span>
+<div><a href="{% url 'detail' t.id %}">{{ t.title }}</a><small>{{ t.classification.category }} · {{ t.classification.verdict }}</small></div></li>
+{% empty %}<li>No data yet. Run <code>python labs/lab71_analyze.py</code>.</li>{% endfor %}</ol>
+<h2>Top vulnerabilities</h2><ul class="results">{% for v in vtop %}<li><a href="{% url 'vuln_detail' v.id %}">{{ v.id }}</a>
+<small>CVSS {{ v.cvss|default:"n/a" }} · {% if v.exploited_in_wild %}exploited in the wild{% else %}no known exploitation{% endif %} · {{ v.n }} threat{{ v.n|pluralize }}</small></li>
+{% empty %}<li>No CVEs found yet.</li>{% endfor %}</ul>
+<h2>By category</h2><ul class="cats">{% for c in cats %}<li><a href="{% url 'search' %}?category={{ c.name|urlencode }}">{{ c.name }}</a> <b>{{ c.n }}</b></li>{% endfor %}</ul>
+{% endblock %}

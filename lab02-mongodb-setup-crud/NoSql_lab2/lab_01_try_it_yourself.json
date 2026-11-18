@@ -1,0 +1,34 @@
+{
+    "lab": "2.1",
+    "title": "MongoDB Server Comparison - Try It Yourself",
+    "local_docker": {
+        "connection": "mongodb://localhost:27017",
+        "status": "CONNECTED",
+        "version": "7.0.40",
+        "git_version": "37741b538c02da076d1e34d66113ac0230d4523a",
+        "modules": [],
+        "storage_engines": [
+            "devnull",
+            "wiredTiger"
+        ]
+    },
+    "atlas": {
+        "status": "CONNECTED",
+        "version": "8.0.29",
+        "git_version": "559d67c651f7393e62757234a0b25cb7a8622148",
+        "modules": [
+            "enterprise"
+        ],
+        "storage_engines": [
+            "devnull",
+            "inMemory",
+            "queryable_wt",
+            "wiredTiger"
+        ]
+    },
+    "version_comparison": {
+        "local_docker_version": "7.0.40",
+        "atlas_version": "8.0.29",
+        "comparison": "DIFFERENT"
+    }
+}

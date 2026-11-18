@@ -1,0 +1,35 @@
+{
+  "products": [
+    {"product_id": "P001", "name": "Wireless Mouse", "category": "Accessories", "base_price": 25.0},
+    {"product_id": "P002", "name": "Mechanical Keyboard", "category": "Accessories", "base_price": 89.0},
+    {"product_id": "P003", "name": "USB-C Cable", "category": "Accessories", "base_price": 9.99},
+    {"product_id": "P004", "name": "27-inch Monitor", "category": "Electronics", "base_price": 229.0},
+    {"product_id": "P005", "name": "Noise-Cancelling Headphones", "category": "Electronics", "base_price": 149.0},
+    {"product_id": "P006", "name": "Webcam HD", "category": "Electronics", "base_price": 59.99},
+    {"product_id": "P007", "name": "Laptop Stand", "category": "Office", "base_price": 40.0},
+    {"product_id": "P008", "name": "Desk Lamp", "category": "Office", "base_price": 29.99},
+    {"product_id": "P009", "name": "Ergonomic Chair", "category": "Furniture", "base_price": 320.0},
+    {"product_id": "P010", "name": "Smart Speaker", "category": "Electronics", "base_price": 79.0},
+    {"product_id": "P011", "name": "Standing Desk", "category": "Furniture", "base_price": 450.0}
+  ],
+  "orders": [
+    {"order_id": "ORD-2001", "customer": "Arjun", "product_id": "P001", "quantity": 2, "order_date": {"$date": "2026-01-06T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2002", "customer": "Sneha", "product_id": "P002", "quantity": 1, "order_date": {"$date": "2026-01-13T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2003", "customer": "Kavya", "product_id": "P004", "quantity": 1, "order_date": {"$date": "2026-01-20T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2004", "customer": "Rahul", "product_id": "P003", "quantity": 5, "order_date": {"$date": "2026-01-27T00:00:00Z"}, "status": "shipped"},
+    {"order_id": "ORD-2005", "customer": "Divya", "product_id": "P005", "quantity": 1, "order_date": {"$date": "2026-02-03T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2006", "customer": "Arjun", "product_id": "P006", "quantity": 2, "order_date": {"$date": "2026-02-10T00:00:00Z"}, "status": "cancelled"},
+    {"order_id": "ORD-2007", "customer": "Vikram", "product_id": "P007", "quantity": 3, "order_date": {"$date": "2026-02-17T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2008", "customer": "Sneha", "product_id": "P004", "quantity": 2, "order_date": {"$date": "2026-02-24T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2009", "customer": "Kavya", "product_id": "P008", "quantity": 1, "order_date": {"$date": "2026-03-04T00:00:00Z"}, "status": "pending"},
+    {"order_id": "ORD-2010", "customer": "Rahul", "product_id": "P001", "quantity": 4, "order_date": {"$date": "2026-03-11T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2011", "customer": "Divya", "product_id": "P002", "quantity": 2, "order_date": {"$date": "2026-03-18T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2012", "customer": "Vikram", "product_id": "P005", "quantity": 1, "order_date": {"$date": "2026-03-25T00:00:00Z"}, "status": "shipped"},
+    {"order_id": "ORD-2013", "customer": "Arjun", "product_id": "P004", "quantity": 1, "order_date": {"$date": "2026-04-02T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2014", "customer": "Sneha", "product_id": "P003", "quantity": 3, "order_date": {"$date": "2026-04-09T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2015", "customer": "Kavya", "product_id": "P006", "quantity": 1, "order_date": {"$date": "2026-04-16T00:00:00Z"}, "status": "cancelled"},
+    {"order_id": "ORD-2016", "customer": "Rahul", "product_id": "P005", "quantity": 2, "order_date": {"$date": "2026-04-23T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2017", "customer": "Divya", "product_id": "P007", "quantity": 1, "order_date": {"$date": "2026-05-05T00:00:00Z"}, "status": "completed"},
+    {"order_id": "ORD-2018", "customer": "Vikram", "product_id": "P001", "quantity": 1, "order_date": {"$date": "2026-05-12T00:00:00Z"}, "status": "pending"}
+  ]
+}

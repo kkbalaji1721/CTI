@@ -1,0 +1,6 @@
+{% extends "threats/base.html" %}{% block content %}
+<h1>{{ vs|length }} unique vulnerabilit{{ vs|length|pluralize:"y,ies" }}</h1>
+<p><a class="btn" href="{% url 'download_vulns' %}" download>Download (.md)</a></p>
+<ul class="results">{% for v in vs %}<li><a href="{% url 'vuln_detail' v.id %}">{{ v.id }}</a>
+<small>CVSS {{ v.cvss|default:"n/a" }} · {% if v.exploited_in_wild %}exploited in the wild{% else %}no known exploitation{% endif %} · {{ v.n }} threat{{ v.n|pluralize }}</small>
+{% if v.description %}<p>{{ v.description|truncatechars:200 }}</p>{% endif %}</li>{% empty %}<li>No CVEs found. Run <code>python labs/lab71_analyze.py</code>.</li>{% endfor %}</ul>{% endblock %}

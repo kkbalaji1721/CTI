@@ -1,0 +1,4 @@
+index,dataset,build_time_seconds,avg_query_latency_ms,recall_at_20_percent,avg_vectors_examined,queries,documents,dimensions,exact_search_latency_ms
+ExactBruteForce,local educational benchmark (not Atlas),0.0,1.902804530072899,100.0,5000.0,100,5000,384,1.902804530072899
+IVFIndex,local educational benchmark (not Atlas),0.6340723609973793,0.19985943035862874,53.35,260.63,100,5000,384,1.902804530072899
+HNSWStyleIndex,local educational benchmark (not Atlas),0.3121018689998891,1.2756166300096083,92.2,634.18,100,5000,384,1.902804530072899

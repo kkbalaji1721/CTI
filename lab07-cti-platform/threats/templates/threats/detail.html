@@ -1,0 +1,8 @@
+{% extends "threats/base.html" %}{% block content %}
+<h1>{{ t.title }}</h1>
+<p><b>{{ t.classification.category }}</b> · confidence {{ t.classification.confidence|floatformat:2 }} · verdict <b>{{ t.classification.verdict }}</b> · score {{ t.score }}</p>
+<p>Source: {{ src.name|default:t.source_id }}{% if src %} (reliability {{ src.reliability }}){% endif %}{% if t.url %} · <a href="{{ t.url }}" target="_blank" rel="noopener">original</a>{% endif %}</p>
+<p>{{ t.summary }}</p><h2>Indicators</h2>
+<ul>{% for i in t.iocs %}<li>{{ i.type }}: <code>{{ i.value }}</code> <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/search/{{ i.value|urlencode }}">VirusTotal</a></li>{% empty %}<li>None extracted.</li>{% endfor %}</ul>
+<a class="btn" href="{% url 'download_threat' t.id %}" download>Download (.md)</a>
+{% endblock %}

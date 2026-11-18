@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: mongodb-node1
+    static_configs:
+      - targets: ["prod-mongo-1:9216"]   # exporter sidecar shares node 1's network

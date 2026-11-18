@@ -1,0 +1,12 @@
+FROM mongo:8.0
+WORKDIR /opt/mongodb-labs
+COPY Lab-11-Sharding/scripts/ /opt/mongodb-labs/lab11/
+COPY Lab-12-Security/scripts/ /opt/mongodb-labs/lab12/
+COPY Lab-11-Sharding/python/ /opt/mongodb-labs/lab11-python/
+COPY Lab-12-Security/python/ /opt/mongodb-labs/lab12-python/
+CMD ["mongod", "--bind_ip_all"]
+COPY Lab-11-Sharding/docker-compose.yml /opt/mongodb-labs/deployment/lab11-compose.yml
+COPY Lab-12-Security/docker-compose.yml /opt/mongodb-labs/deployment/lab12-rbac-compose.yml
+COPY Lab-12-Security/docker-compose.tls.yml /opt/mongodb-labs/deployment/lab12-tls-compose.yml
+COPY Lab-11-Sharding/LAB11_1_DECISION_MATRIX.md /opt/mongodb-labs/LAB11_1_DECISION_MATRIX.md
+COPY README.md /opt/mongodb-labs/README.md

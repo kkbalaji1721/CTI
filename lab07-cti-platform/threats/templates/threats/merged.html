@@ -1,0 +1,6 @@
+{% extends "threats/base.html" %}{% block content %}
+<h1>Merged records</h1>
+<p>Vulnerability feed: <b>{{ raw }}</b> raw rows → <b>{{ unique }}</b> unique CVEs after duplicate removal.</p>
+<p><a class="btn" href="{% url 'download_merged' %}" download>Download (.md)</a></p>
+<ul class="results">{% for r in rows %}<li><b>{{ r.id }}</b>: {% for p in r.parts %}<code>{{ p }}</code> {% endfor %}→ <b>{{ r.name }}</b></li>
+{% empty %}<li>Run <code>python labs/lab_merge.py</code> first.</li>{% endfor %}</ul>{% endblock %}

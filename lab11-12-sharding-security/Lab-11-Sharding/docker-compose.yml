@@ -1,0 +1,63 @@
+services:
+  cfg:
+    image: YOUR_DOCKERHUB_USERNAME/mongodb-lab11-12:1.0
+    container_name: lab11-cfg
+    command: ["mongod", "--configsvr", "--replSet", "cfgRS", "--port", "27019", "--bind_ip_all"]
+    volumes:
+      - cfgdata:/data/configdb
+      - ./scripts:/scripts:ro
+    networks: [lab11net]
+    healthcheck:
+      test: ["CMD", "mongosh", "--port", "27019", "--quiet", "--eval", "db.adminCommand({ping:1}).ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  shard1:
+    image: YOUR_DOCKERHUB_USERNAME/mongodb-lab11-12:1.0
+    container_name: lab11-shard1
+    command: ["mongod", "--shardsvr", "--replSet", "shard1RS", "--port", "27018", "--bind_ip_all"]
+    volumes:
+      - shard1data:/data/db
+      - ./scripts:/scripts:ro
+    networks: [lab11net]
+    healthcheck:
+      test: ["CMD", "mongosh", "--port", "27018", "--quiet", "--eval", "db.adminCommand({ping:1}).ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  shard2:
+    image: YOUR_DOCKERHUB_USERNAME/mongodb-lab11-12:1.0
+    container_name: lab11-shard2
+    command: ["mongod", "--shardsvr", "--replSet", "shard2RS", "--port", "27018", "--bind_ip_all"]
+    volumes:
+      - shard2data:/data/db
+      - ./scripts:/scripts:ro
+    networks: [lab11net]
+    healthcheck:
+      test: ["CMD", "mongosh", "--port", "27018", "--quiet", "--eval", "db.adminCommand({ping:1}).ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  mongos:
+    image: YOUR_DOCKERHUB_USERNAME/mongodb-lab11-12:1.0
+    container_name: lab11-mongos
+    command: ["mongos", "--configdb", "cfgRS/cfg:27019", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "27017:27017"
+    depends_on:
+      cfg: {condition: service_healthy}
+      shard1: {condition: service_healthy}
+      shard2: {condition: service_healthy}
+    networks: [lab11net]
+
+volumes:
+  cfgdata:
+  shard1data:
+  shard2data:
+
+networks:
+  lab11net:
+    driver: bridge

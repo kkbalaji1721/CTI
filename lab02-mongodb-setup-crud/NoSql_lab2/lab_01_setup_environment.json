@@ -1,0 +1,41 @@
+{
+    "lab": "2.1",
+    "title": "Environment Setup Verification",
+    "core_components": {
+        "Python": {
+            "version": "3.13.6",
+            "status": "OK"
+        },
+        "PyMongo": {
+            "version": "4.17.0",
+            "status": "OK"
+        },
+        "MongoDB Local": {
+            "version": "7.0.40",
+            "status": "OK",
+            "connection": "mongodb://localhost:27017"
+        },
+        "MongoDB Atlas": {
+            "version": null,
+            "status": "NOT CONFIGURED"
+        },
+        "Docker": {
+            "version": null,
+            "status": "NOT INSTALLED"
+        }
+    },
+    "optional_packages": {
+        "fastapi": "not installed",
+        "streamlit": "not installed",
+        "voyageai": "not installed",
+        "neo4j": "not installed",
+        "cassandra": "not installed",
+        "rich": "installed",
+        "dotenv": "installed"
+    },
+    "summary": {
+        "core_checks_passed": 3,
+        "core_checks_total": 5,
+        "overall_status": "READY"
+    }
+}

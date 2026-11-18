@@ -1,0 +1,23 @@
+services:
+  mongodb-tls:
+    image: YOUR_DOCKERHUB_USERNAME/mongodb-lab11-12:1.0
+    container_name: lab12-tls-mongodb
+    command:
+      - mongod
+      - --bind_ip_all
+      - --port
+      - "27017"
+      - --tlsMode
+      - requireTLS
+      - --tlsCertificateKeyFile
+      - /certificates/server.pem
+      - --tlsCAFile
+      - /certificates/ca.crt
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./certificates:/certificates:ro
+      - tlsdata:/data/db
+
+volumes:
+  tlsdata:

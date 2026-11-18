@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a50"
+  },
+  "name": "ScyllaDB",
+  "family": "Wide-Column",
+  "data_model": "Column-Family",
+  "vendor": "ScyllaDB Inc.",
+  "use_case": "IoT, gaming, real-time applications",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a51"
+  },
+  "name": "InfluxDB",
+  "family": "Time-Series",
+  "data_model": "Time-Series",
+  "vendor": "InfluxData",
+  "use_case": "IoT monitoring, metrics, sensor data",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a52"
+  },
+  "name": "ArangoDB",
+  "family": "Multi-Model",
+  "data_model": "Document / Graph / Key-Value",
+  "vendor": "ArangoDB",
+  "use_case": "Knowledge graphs, recommendations, connected data",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a53"
+  },
+  "name": "CouchDB",
+  "family": "Document",
+  "data_model": "JSON Document",
+  "vendor": "Apache",
+  "use_case": "Offline-first applications and data synchronization",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a54"
+  },
+  "name": "DynamoDB",
+  "family": "Key-Value / Document",
+  "data_model": "Key-Value / Document",
+  "vendor": "AWS",
+  "use_case": "Shopping carts, serverless applications, session management",
+  "open_source": false
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a55"
+  },
+  "name": "Neo4j",
+  "family": "Graph",
+  "data_model": "Labeled Property Graph",
+  "vendor": "Neo4j Inc.",
+  "use_case": "Knowledge graphs, fraud detection, recommendations",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a56"
+  },
+  "name": "OrientDB",
+  "family": "Multi-Model",
+  "data_model": "Document / Graph",
+  "vendor": "OrientDB",
+  "use_case": "Connected applications and graph-based data",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a57"
+  },
+  "name": "Aerospike",
+  "family": "Key-Value",
+  "data_model": "Key-Value",
+  "vendor": "Aerospike Inc.",
+  "use_case": "Real-time bidding, fraud detection, personalization",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a58"
+  },
+  "name": "Dgraph",
+  "family": "Graph",
+  "data_model": "Distributed Graph",
+  "vendor": "Dgraph Labs",
+  "use_case": "Knowledge graphs and connected data applications",
+  "open_source": true
+},
+{
+  "_id": {
+    "$oid": "6a90475b420fcf6755103a59"
+  },
+  "name": "RethinkDB",
+  "family": "Document",
+  "data_model": "JSON Document",
+  "vendor": "RethinkDB",
+  "use_case": "Real-time applications and live data feeds",
+  "open_source": true
+}]

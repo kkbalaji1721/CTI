@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6aa0e744d2eb22deeeb81500"
+  },
+  "sku": "A",
+  "name": "Product A",
+  "price": 150,
+  "stock": 60,
+  "is_active": true
+},
+{
+  "_id": {
+    "$oid": "6aa0e744d2eb22deeeb81501"
+  },
+  "sku": "B",
+  "name": "Product B",
+  "price": 200,
+  "stock": 85,
+  "is_active": true
+},
+{
+  "_id": {
+    "$oid": "6aa0e744d2eb22deeeb81502"
+  },
+  "sku": "C",
+  "name": "Product C",
+  "price": 300,
+  "stock": 110,
+  "is_active": true
+},
+{
+  "_id": {
+    "$oid": "6aa0e744d2eb22deeeb81503"
+  },
+  "sku": "D",
+  "name": "Product D",
+  "price": 400,
+  "stock": 25,
+  "is_active": false
+},
+{
+  "_id": {
+    "$oid": "6aa0e744d2eb22deeeb81504"
+  },
+  "sku": "E",
+  "name": "Product E",
+  "price": 500,
+  "stock": 30,
+  "is_active": false
+},
+{
+  "_id": {
+    "$oid": "6aa0e7441b735728d428abd3"
+  },
+  "sku": "F",
+  "is_active": true,
+  "name": "New Product",
+  "price": 600,
+  "stock": 0
+}]

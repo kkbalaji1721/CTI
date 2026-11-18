@@ -1,0 +1,14 @@
+services:
+  lab17:
+    build: .
+    image: mongodb-lab17:latest
+    environment:
+      MONGODB_ATLAS_URI: ${MONGODB_ATLAS_URI:-}
+      MONGODB_DATABASE: ${MONGODB_DATABASE:-lab17}
+      VOYAGE_API_KEY: ${VOYAGE_API_KEY:-}
+      VOYAGE_MODEL: ${VOYAGE_MODEL:-voyage-3-lite}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+    stdin_open: true
+    tty: true

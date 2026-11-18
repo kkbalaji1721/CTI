@@ -1,0 +1,12 @@
+# Lab 13 - demo/tools image: PyMongo scripts + all lab artefacts (compose, k8s, terraform)
+FROM python:3.12-slim
+RUN pip install --no-cache-dir pymongo==4.8.0
+WORKDIR /lab
+COPY tools/ /lab/tools/
+COPY k8s/ /lab/k8s/
+COPY terraform/ /lab/terraform/
+COPY prometheus/ /lab/prometheus/
+COPY docker-compose.yml README.md /lab/
+LABEL org.opencontainers.image.title="lab13-tools" \
+      org.opencontainers.image.description="PyMongo verification + failover scripts and all Lab 13 files"
+CMD ["bash","-c","echo 'Lab 13 tools. Try: python tools/verify_rs.py   |   python tools/failover_test.py'; ls -R /lab | head -50"]
